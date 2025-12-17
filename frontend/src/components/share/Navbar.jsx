@@ -2,7 +2,7 @@ import { Popover } from "@radix-ui/react-popover";
 import React, { useState } from "react";
 import { PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Avatar, AvatarImage } from "../ui/avatar";
-import { BookUser, LogOut, User2, UserRoundPlus, MessageCircle } from "lucide-react";
+import { BookUser, LogOut, User2, UserRoundPlus, MessageCircle, FileText } from "lucide-react";
 import { Button } from "../ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -129,12 +129,20 @@ const Navbar = () => {
 
                   <div>
                     {user && user.role === "student" && (
-                      <div className="flex w-fit items-center gap-2 cursor-pointer mt-2">
-                        <User2 />
-                        <Button variant="link">
-                          <Link to="/profile">Xem thông tin cá nhân</Link>
-                        </Button>
-                      </div>
+                      <>
+                        <div className="flex w-fit items-center gap-2 cursor-pointer mt-2">
+                          <User2 />
+                          <Button variant="link">
+                            <Link to="/profile">Xem thông tin cá nhân</Link>
+                          </Button>
+                        </div>
+                        <div className="flex w-fit items-center gap-2 cursor-pointer mt-2">
+                          <FileText />
+                          <Button variant="link">
+                            <Link to="/create-cv">Tạo CV</Link>
+                          </Button>
+                        </div>
+                      </>
                     )}
                     {user && user.role !== "student" && (
                       <>

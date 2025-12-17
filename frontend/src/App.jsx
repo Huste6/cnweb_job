@@ -21,6 +21,7 @@ import ForgotPasswordOtp from "./components/auth/ForgotPasswordOtp";
 import ResetPassword from "./components/auth/ResetPassword";
 import CreateUserAdmin from "./components/admin/CreateUserAdmin";
 import ListUserAdmin from "./components/admin/ListUserAdmin";
+import CreateCV from "./components/CreateCV";
 import { useEffect } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
@@ -75,6 +76,14 @@ const appRouter = createBrowserRouter([
     element: (
       <ProtectedRouteUser>
         <Profile />
+      </ProtectedRouteUser>
+    ),
+  },
+  {
+    path: "/create-cv",
+    element: (
+      <ProtectedRouteUser>
+        <CreateCV />
       </ProtectedRouteUser>
     ),
   },
