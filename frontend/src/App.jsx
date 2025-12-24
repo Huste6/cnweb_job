@@ -25,6 +25,7 @@ import CreateCV from "./components/CreateCV";
 import PendingCompaniesAdmin from "./components/admin/PendingCompaniesAdmin";
 import AdminDashboard from "./components/admin/AdminDashboard";
 import AdminPendingJobs from "./components/admin/AdminPendingJobs";
+import ChatBot from "./components/ChatBot";
 
 
 import { useEffect } from "react";
@@ -245,7 +246,12 @@ function App() {
     fetchMe();
   }, [dispatch]);
 
-  return <RouterProvider router={appRouter} />;
+  return (
+    <>
+      <RouterProvider router={appRouter} />
+      <ChatBot />
+    </>
+  );
 }
 
 export default App;
